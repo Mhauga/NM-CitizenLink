@@ -1,99 +1,67 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
+html {
+    font-family: "Public Sans", sans-serif;
+    text-align: center;
+    
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #ECDFCC;
-}
 header {
-    background: #BF0A30;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav a {
-    color: #FFD700;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-}
-
-/*Voter Information Syling*/
-body > H2{
-    text-align: center; 
-    padding: 1% 0% 0% 0%;
-}
-
-/*Resource List*/
-.container > div > div > ul{
-    list-style-type: none;
-    text-align:left;
-    height:40vh;
-    padding:10px;
-}
-
-/* Responsive columns */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-    margin: auto;
-    max-width: 1200px;
-    text-align: center;
-}
-
-.container div {
-    flex:1;
-    margin: 1%;
-    padding: 1rem;
-    background: #ECDFCC;
-    border: 1px solid black;;
-    position:relative;
-}
-
-.rssfeed {
-    justify-content: center;
-}
-
-.container > div > div{
-    border: 0px solid black;
-}
-
-.container > div > div > h2{
     background-color: #BF0A30;
-    color:#FFD700;
+    width: 100%;
+    margin:0%;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 1rem;
+.title {
+    font-size: 2rem;
 }
 
-footer h2 {
-    margin-bottom: 0.5rem;
+.vote {
+    text-decoration: underline;
 }
 
-footer p {
-    max-width: 600px;
-    margin: 0 auto;
+.container{
+    display:grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    height: 100%vw;
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
+.container > *{
+    display:grid;
+    grid-template: 1fr / 4fr 3fr 4fr;
+
+}
+
+#executive {
+    grid-area: 1 / 1 / 1 / 4;
+}
+
+#legislative{
+    grid-area:2/1/2/4;
+}
+
+#judicial{
+    grid-area:3/1/3/4;
+}
+
+#executive, #legislative, #judicial > * {
+    align-self: top;
+}
+
+.list {
+    text-align: left;
+    ul {
+        list-style: none;
     }
 }
 
-@media (max-width: 600px) {
-    .container {
+#resources {
+    background-color: #FFD700;
+    text-align: center;
+}
+
+@media (max-width:680px)
+{
+    .container > * {
+        display:flex;
         flex-direction: column;
     }
 }
